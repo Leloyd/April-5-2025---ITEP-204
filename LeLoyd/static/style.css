@@ -1,0 +1,168 @@
+/* Base styles */
+body {
+    font-family: 'Comic Sans MS', cursive, sans-serif; /* Fun and quirky font */
+    background-color: #ff69b4; /* Bright, unsettling pink background */
+    color: #000000; /* Bold text color */
+    text-align: center;
+    padding: 50px;
+    margin: 0;
+    overflow-x: hidden; /* Avoid horizontal scrolling */
+}
+
+/* Header styling */
+h1 {
+    font-size: 3em;
+    color: #ff00ff; /* Electric purple */
+    text-shadow: 4px 4px 5px rgba(0, 0, 0, 0.5);
+    animation: rotate 10s linear infinite;
+}
+
+/* Animation for rotating header */
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Styling the form */
+form {
+    background-color: #ff6347; /* Tomato color */
+    padding: 30px;
+    margin-top: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Fun hover effect */
+form:hover {
+    transform: scale(1.05);
+}
+
+/* Input fields and button styling */
+input[type="number"], input[type="text"] {
+    background-color: #ffff00; /* Bright yellow for input fields */
+    border: 2px solid #ff4500; /* Orange border */
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 1.2em;
+    margin: 10px;
+    color: #8b0000; /* Dark red text */
+    transition: background-color 0.3s ease-in-out;
+}
+
+/* Hover effect for inputs */
+input[type="number"]:hover, input[type="text"]:hover {
+    background-color: #ff1493; /* Deep pink on hover */
+    color: #ffffff;
+}
+
+/* Button styling */
+button {
+    background-color: #00ff00; /* Neon green */
+    border: none;
+    padding: 15px 40px;
+    font-size: 1.5em;
+    border-radius: 20px;
+    color: #000000;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+    cursor: pointer;
+    margin-top: 20px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+/* Button hover effect */
+button:hover {
+    background-color: #ff0000; /* Flashing red on hover */
+    transform: scale(1.1); /* Make button slightly bigger on hover */
+}
+
+/* Student list table styling */
+table {
+    margin-top: 40px;
+    width: 100%;
+    border-collapse: collapse;
+    animation: tableShake 1s ease-in-out infinite;
+}
+
+/* Table row styles */
+tr:nth-child(even) {
+    background-color: #f0e68c; /* Light yellow */
+}
+
+tr:nth-child(odd) {
+    background-color: #d3d3d3; /* Light gray */
+}
+
+/* Table header styling */
+th {
+    background-color: #8a2be2; /* Blue-violet */
+    color: #ffffff;
+    padding: 10px;
+    font-size: 1.2em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Table cell styling */
+td {
+    padding: 10px;
+    font-size: 1.1em;
+    color: #000000;
+}
+
+/* Hover effect for table rows */
+tr:hover {
+    background-color: #ff6347; /* Tomato color */
+    color: #ffffff;
+}
+
+/* Keyframe for shaking the table */
+@keyframes tableShake {
+    0% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-5px);
+    }
+    50% {
+        transform: translateX(5px);
+    }
+    75% {
+        transform: translateX(-5px);
+    }
+    100% {
+        transform: translateX(5px);
+    }
+}
+
+/* Disturbing animation for a pop-up message */
+@keyframes pop-up {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(0);
+        opacity: 0;
+    }
+}
+
+/* Random pop-up messages */
+.pop-up-message {
+    font-size: 1.8em;
+    color: #ff00ff;
+    background-color: #000000;
+    padding: 20px;
+    border-radius: 15px;
+    display: inline-block;
+    margin-top: 50px;
+    animation: pop-up 2s infinite;
+}

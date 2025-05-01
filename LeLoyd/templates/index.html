@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Score Management System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Test Score Management System</h1>
+
+    <!-- Search Bar -->
+    <form action="/" method="POST">
+        <input type="text" name="search_query" placeholder="Search by student name" required>
+        <button type="submit">Search</button>
+    </form>
+
+    <!-- Filter by Score -->
+    <form method="GET" action="/">
+        <label for="min_score">Min Score:</label>
+        <input type="number" id="min_score" name="min_score" placeholder="Min Score">
+    
+        <label for="max_score">Max Score:</label>
+        <input type="number" id="max_score" name="max_score" placeholder="Max Score">
+    
+        <button type="submit">Filter</button>
+    </form>
+    
+
+    <!-- Add New Student Form -->
+    <form action="/add" method="POST">
+        <input type="text" name="name" placeholder="Student Name" required>
+        <input type="email" name="email" placeholder="Student Email" required>
+        <input type="number" name="score" placeholder="Score" required>
+        <button type="submit">Add Student</button>
+    </form>
+
+    <!-- Students Table -->
+    <table>
+        <tr><th>ID</th><th>Name</th><th>Email</th><th>Score</th><th>Actions</th></tr>
+        {% for student in students %}
+        <tr>
+            <td>{{ student[0] }}</td>
+            <td>{{ student[1] }}</td>
+            <td>{{ student[2] }}</td>
+            <td>{{ student[3] }}</td>
+            <td>
+                <a href="/edit/{{ student[0] }}">Edit</a>
+                <a href="/delete/{{ student[0] }}" onclick="return confirm('Delete this student?')">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
